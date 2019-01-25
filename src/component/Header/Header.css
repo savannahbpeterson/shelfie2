@@ -1,0 +1,24 @@
+#header-box{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    background-color: #ab2a19;
+    z-index: 2;
+
+}
+#header-box>img{
+    width: 30px;
+    position: absolute;
+    top: 15px;
+    left: 45px;
+}
+#shelfie{
+    position: absolute;
+    /* top: 5px; */
+    left: 110px;
+    font-weight: 600;
+    font-size: 25px;
+    color: #fff;
+    text-transform: uppercase;
+}

@@ -28,6 +28,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+          <Header />
         <Dashboard 
           inventory = {this.state.inventory}
           getInventory = {this.componentDidMount}
@@ -36,7 +37,6 @@ class App extends Component {
           getInventory={this.getInventory}
           selectedProducts={this.state.selectedProducts}
           />
-          <Header />
       </div>
     );
   }
