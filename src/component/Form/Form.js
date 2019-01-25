@@ -8,9 +8,10 @@ class Form extends Component{
         this.state = {
             imageUrl: '',
             name: '',
-            price: 0
+            price: 0,
+            selectedProductId: null
         }
-        this.handleCancel = this.handleCancel.bind(this)
+        this.handleClear = this.handleClear.bind(this)
     }
 
 
@@ -25,7 +26,7 @@ class Form extends Component{
         this.setState({price: val})
     }
 
-    handleCancel(imageUrl, name, price){
+    handleClear(){
         this.setState({
         imageUrl: '',
         name: '',
@@ -37,7 +38,7 @@ class Form extends Component{
         axios.post(`/api/product`, {name: name, price: price, imageUrl: imageUrl}).then(() => {
             this.props.getInventory()
             this.handleCancel()
-
+            console.log(this.handleAddProduct)
         })
     }
 
@@ -48,7 +49,7 @@ class Form extends Component{
                 <input placeholder='Image URL' onChange={(e) => this.handleImage(e.target.value)}/>
                 <input placeholder='Product Name' onChange={(e) => this.handleNameChange(e.target.value)}/>
                 <input placeholder='Price'onChange={(e) => this.handlePriceChange (e.target.value)}/>
-                <button onChange={() => this.handleCancel ()}>Cancel</button>
+                <button onChange={() => this.handleClear ()}>Cancel</button>
                 <button onChange={() => this.handleAddProduct ()}>Add to inventory</button>
             </div>
         )

@@ -12,7 +12,8 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      inventory: []
+      inventory: [],
+      selectedProducts: []
     }
   }
 
@@ -27,14 +28,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
         <Dashboard 
           inventory = {this.state.inventory}
           getInventory = {this.componentDidMount}
         />
         <Form 
-          
-        />
+          getInventory={this.getInventory}
+          selectedProducts={this.state.selectedProducts}
+          />
+          <Header />
       </div>
     );
   }

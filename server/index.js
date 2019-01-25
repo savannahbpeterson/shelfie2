@@ -9,12 +9,13 @@ app.use(bodyParser.json())
 
 massive(process.env.CONNECTION_STRING).then((db) => {
     app.set('db', db)
+    console.log('database is connected')
 })
 
 app.get(`/api/inventory`, ctrl.getInventory)
 app.post(`/api/product`, ctrl.addProduct)
+app.delete(`/api/product/:id`, ctrl.deleteProduct)
 
 
-
-const PORT = process.env.serverPort || 4000;
+const PORT = process.env.serverPort;
 app.listen(PORT, ()=> console.log(`the magic is happening on ${PORT}`))

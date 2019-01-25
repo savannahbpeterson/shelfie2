@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import Product from '../Product/Product'
 
 
@@ -12,11 +12,11 @@ class Dashboard extends Component{
         }
     }
 
-    // clearProduct(id){
-    //     axios.delete(`/api/product/:id`).then(() => {this.props.getInventory()
-    //     console.log('Its working!')
-    //     })
-    // }
+    clearProduct(id){
+        axios.delete(`/api/product/:id`).then(() => {this.props.getInventory()
+        console.log('Its working!')
+        })
+    }
     render(){
         return(
             <div>Dashboard
