@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import Product from '../Product/Product'
-import { threadId } from 'worker_threads';
+
 
 
 class Dashboard extends Component{
@@ -12,13 +12,16 @@ class Dashboard extends Component{
         }
     }
 
-    clearProduct(){
-        axios.delete(`/api/product/:id`).then(() => {this.props.})
-    }
+    // clearProduct(id){
+    //     axios.delete(`/api/product/:id`).then(() => {this.props.getInventory()
+    //     console.log('Its working!')
+    //     })
+    // }
     render(){
         return(
             <div>Dashboard
                 {this.props.inventory.map(val => {
+                    return(  
                     <Product 
                         key={val.name}
                         id={val.id}
@@ -26,7 +29,8 @@ class Dashboard extends Component{
                         price={val.price}
                         imageUrl={val.imageUrl}
                         clearProduct={this.clearProduct}
-                    />
+                    />)
+                  
                 })}
 
             </div>

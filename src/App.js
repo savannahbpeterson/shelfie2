@@ -16,9 +16,12 @@ class App extends Component {
     }
   }
 
-  // componentDidMount(){
-  //   axios.get('/api/inventory').then(res => this.setState({inventory:this.setState})).catch(error => console.log(error))
-  // }
+  componentDidMount(){
+    axios.get('/api/inventory').then(res => this.setState({inventory: res.data}))
+  }
+  getInventory(){
+    axios.get('/api/inventory').then(res => this.setState({inventory: res.data}))
+  }
 
 
   render() {
@@ -29,7 +32,9 @@ class App extends Component {
           inventory = {this.state.inventory}
           getInventory = {this.componentDidMount}
         />
-        <Form />
+        <Form 
+          
+        />
       </div>
     );
   }

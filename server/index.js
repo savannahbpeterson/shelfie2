@@ -12,6 +12,7 @@ massive(process.env.CONNECTION_STRING).then((db) => {
 })
 
 app.get(`/api/inventory`, ctrl.getInventory)
+app.post(`/api/product`, ctrl.addProduct)
 
 
 
